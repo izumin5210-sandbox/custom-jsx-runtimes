@@ -18,7 +18,7 @@ export const lineService: ServiceImpl<typeof LineService> = {
 function HelloMessage({ user }: { user: User }) {
   return (
     <message>
-      Hello, <mention type="user" userId={user.id} />
+      Hello, <mention type="user" userId={user.id} /> <emoji name="laugh" />
     </message>
   );
 }
