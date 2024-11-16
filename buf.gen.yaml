@@ -1,0 +1,8 @@
+version: v2
+inputs:
+  - directory: proto
+clean: true
+plugins:
+  - local: protoc-gen-es
+    opt: target=ts
+    out: ./packages//jsx-line/src/__generated__

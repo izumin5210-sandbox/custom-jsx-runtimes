@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tskaigikansai;
+
+message User {
+  string id = 1;
+}
+
+message SendHelloMessageRequest {
+  string to_id = 1;
+  User mentioned_user = 2;
+}
+
+message SendHelloMessageResponse {
+  // empty
+}
+
+service LineService {
+  rpc SendHelloMessage(SendHelloMessageRequest) returns (SendHelloMessageResponse) {}
+}
