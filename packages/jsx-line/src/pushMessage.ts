@@ -9,11 +9,6 @@ export async function pushMessage({
   message: JSX.Element;
   accessToken: string;
 }) {
-  console.log({
-    toId,
-    message,
-    accessToken,
-  });
   const res = await fetch("https://api.line.me/v2/bot/message/push", {
     method: "POST",
     headers: {
@@ -25,5 +20,7 @@ export async function pushMessage({
       messages: [message],
     }),
   });
-  console.error(await res.text());
+  if (!res.ok) {
+    console.error(await res.text());
+  }
 }
